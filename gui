@@ -1,0 +1,99 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 7 | Scripts: 1 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.ScreenGui.Emote
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2"]["Size"] = UDim2.new(0, 320, 0, 320);
+G2L["2"]["Position"] = UDim2.new(0.237, 0, -5, 50);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Emote]];
+G2L["2"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ScreenGui.Emote.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
+G2L["3"]["CornerRadius"] = UDim.new(1, 0);
+
+
+-- StarterGui.ScreenGui.Emote.UIStroke
+G2L["4"] = Instance.new("UIStroke", G2L["2"]);
+G2L["4"]["Transparency"] = 0.4;
+G2L["4"]["Thickness"] = 20;
+G2L["4"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+
+-- StarterGui.ScreenGui.LocalScript
+G2L["5"] = Instance.new("LocalScript", G2L["1"]);
+
+
+
+-- StarterGui.ScreenGui.Emote1
+G2L["6"] = Instance.new("TextButton", G2L["1"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["6"]["Size"] = UDim2.new(0, 42, 0, 42);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[Emote]];
+G2L["6"]["Name"] = [[Emote1]];
+G2L["6"]["Position"] = UDim2.new(0.17, 0, -0.033, 0);
+
+
+-- StarterGui.ScreenGui.Emote1.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"]["CornerRadius"] = UDim.new(1, 0);
+
+
+-- StarterGui.ScreenGui.LocalScript
+local function C_5()
+local script = G2L["5"];
+	local Emote = script.Parent.Emote
+	local Emote1 = script.Parent.Emote1
+	
+	local open = false
+	
+	Emote1.MouseButton1Up:Connect(function()
+		if not open then
+			Emote:TweenPosition(
+				UDim2.new(0.55, -50, 0.35, 50),
+				"Out",
+				"Quad",
+				0.3,
+				false
+			)
+		else
+			Emote:TweenPosition(
+				UDim2.new(0.237, 0, -5, 0),
+				"Out",
+				"Quad",
+				0.2,
+				false
+			)
+		end
+		open = not open
+	end)
+	
+end;
+task.spawn(C_5);
+
+return G2L["1"], require;
