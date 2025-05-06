@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 7 | Scripts: 1 | Modules: 0 | Tags: 0
+-- Instances: 8 | Scripts: 1 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.ScreenGui
@@ -20,7 +20,7 @@ G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["2"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["2"]["Size"] = UDim2.new(0, 320, 0, 320);
+G2L["2"]["Size"] = UDim2.new(0, 310, 0, 310);
 G2L["2"]["Position"] = UDim2.new(0.237, 0, -5, 50);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[Emote]];
@@ -52,16 +52,21 @@ G2L["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["6"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
-G2L["6"]["Size"] = UDim2.new(0, 42, 0, 42);
+G2L["6"]["Size"] = UDim2.new(0, 50, 0, 50);
 G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6"]["Text"] = [[Emote]];
 G2L["6"]["Name"] = [[Emote1]];
-G2L["6"]["Position"] = UDim2.new(0.17, 0, -0.033, 0);
+G2L["6"]["Position"] = UDim2.new(0, 198, 0, -16);
 
 
 -- StarterGui.ScreenGui.Emote1.UICorner
 G2L["7"] = Instance.new("UICorner", G2L["6"]);
 G2L["7"]["CornerRadius"] = UDim.new(1, 0);
+
+
+-- StarterGui.ScreenGui.UIAspectRatioConstraint
+G2L["8"] = Instance.new("UIAspectRatioConstraint", G2L["1"]);
+G2L["8"]["AspectRatio"] = 1.46597;
 
 
 -- StarterGui.ScreenGui.LocalScript
